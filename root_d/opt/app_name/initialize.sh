@@ -37,8 +37,8 @@ fi
 
 type stop >/dev/null
 if [[ $? -ne 0 ]];then
-  error "Could not locate a 'start' method after your libraries were sourced. " \
-       "Please ensure one of your libraries implements a start method."
+  error "Could not locate a 'stop' method after your libraries were sourced. " \
+       "Please ensure one of your libraries implements a stop method."
   exit 1
 fi
 
