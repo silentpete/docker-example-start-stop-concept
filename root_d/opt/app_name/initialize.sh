@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function info () {
   echo -e "\e[32mINFO:\e[0m $1"

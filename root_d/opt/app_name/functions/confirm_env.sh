@@ -1,9 +1,15 @@
-#!/bin/sh
-
-check_environment() {
+#!/bin/bash
+confirm_environment() {
   info "check expected environment variables"
-  if [[ -z ${TEST} ]]; then
-    error "The TEST environment variable must be set and not be empty.";
-    exit 1;
-  fi
+  declare -a arr=(
+    "FUNCTIONS"
+    # "TEST"
+  )
+  for var in ${arr[@]}; do
+    if [[ $(env | grep -c ${var}) == 0 ]]; then
+      error "The ${var} environment variable must be set and not be empty."
+      exit 1;
+    fi
+    info "found env variable: ${var}"
+  done
 }

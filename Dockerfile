@@ -1,7 +1,7 @@
-FROM alpine:latest
+FROM centos:7.5.1804
 
 ENV FUNCTIONS="/opt/app_name/functions/"
 
 COPY /root_d /
 
-CMD ["/bin/sh", "/opt/app_name/initialize.sh"]
+CMD ["/bin/bash", "/opt/app_name/initialize.sh"]

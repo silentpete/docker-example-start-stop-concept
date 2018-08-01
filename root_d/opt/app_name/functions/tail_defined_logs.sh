@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # any file you want tailed so it'll show in docker logs
 

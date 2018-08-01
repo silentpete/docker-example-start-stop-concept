@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #
 ## Can add all initialization scripts to a start method.
@@ -18,8 +18,8 @@ start_app() {
 }
 
 start() {
-  # Uncomment to check_environment to see error message
-  #check_environment
+  # Uncomment to confirm_environment to see error message
+  confirm_environment
   config_app
   send_logs_to_stdout
   start_app
