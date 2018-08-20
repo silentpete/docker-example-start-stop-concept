@@ -29,3 +29,4 @@ The stop function is used to stop the service inside smoothly, and then exit.
 * [Google'ing](www.google.com)
 * [Centurylink Dev Blog - start trap loop](https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers)
 * [Serverfault - log to stdout](https://serverfault.com/questions/599103/make-a-docker-application-write-to-stdout)
+* [https://docs.docker.com/config/containers/multi-service_container/](https://docs.docker.com/config/containers/multi-service_container/)

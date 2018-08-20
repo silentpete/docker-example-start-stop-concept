@@ -3,6 +3,7 @@ confirm_environment() {
   info "check expected environment variables"
   declare -a arr=(
     "FUNCTIONS"
+    # Uncomment to see error message
     # "TEST"
   )
   for var in ${arr[@]}; do

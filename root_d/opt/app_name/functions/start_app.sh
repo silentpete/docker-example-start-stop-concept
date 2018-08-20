@@ -7,6 +7,7 @@
 ## - first time running
 ## - if restarted
 ## - if stoped, removed and started
+## - if failure
 #
 ## build intelligent functions
 
@@ -15,12 +16,4 @@ start_app() {
   # specific app start concept
   # cd /app/dir
   # ./bin/start-app.sh
-}
-
-start() {
-  # Uncomment to confirm_environment to see error message
-  confirm_environment
-  config_app
-  send_logs_to_stdout
-  start_app
 }

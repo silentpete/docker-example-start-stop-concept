@@ -17,26 +17,29 @@ if [[ -z ${FUNCTIONS} ]]; then
   exit 1
 fi
 
-info "initializing"
+info "initializing..."
 
 for file in $(find "${FUNCTIONS}" -mindepth 1 -maxdepth 1 -type f -name '*.sh' | sort); do
   info "sourcing shell functions file: $(basename ${file})"
   source $file
-  if [[ $? -gt 0 ]]; then
+  status=$?
+  if [[ status -ne 0 ]]; then
     error "An error occurred sourcing function file: $(basename ${file})."
     exit 1
   fi
 done
 
 type start >/dev/null
-if [[ $? -ne 0 ]];then
+status=$?
+if [[ status -ne 0 ]]; then
   error "Could not locate a 'start' method after your libraries were sourced. " \
        "Please ensure one of your libraries implements a start method."
   exit 1
 fi
 
 type stop >/dev/null
-if [[ $? -ne 0 ]];then
+status=$?
+if [[ status -ne 0 ]]; then
   error "Could not locate a 'stop' method after your libraries were sourced. " \
        "Please ensure one of your libraries implements a stop method."
   exit 1
