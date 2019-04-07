@@ -6,7 +6,7 @@ I have been working with docker for a little while and wanted to share a basic c
 
 Make sure that ENV FUNCTIONS is defined and call your init script.
 
-## COPY /root_d
+## COPY /root.d
 
 When files can be copied into the container, "root_d" can be used. "root_d" signifies the container OS root directory structure. Copy in the things you need with one command where they need to be. There comes a time when you may need to copy in a file before the RUN, and then copy in files after. For example a config file.
 
@@ -18,7 +18,7 @@ If the container is not in the state at which the service it will run needs to b
 
 ## Start
 
-The start function is used to call all functions that get the environment setup. Somewhere along the way the start will call the service the container is responsible for.
+The start function is used to call all functions that get the highly configurable environment setup. Somewhere along the way the start will call the service the container is responsible for.
 
 ## Stop
 

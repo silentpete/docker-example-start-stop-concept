@@ -1,7 +1,14 @@
-FROM centos:7.5.1804
+FROM centos:7.6.1810
 
-ENV FUNCTIONS="/opt/app_name/functions/"
+ARG APP="app_name"
 
-COPY /root_d /
+ENV \
+  APP_NAME="${APP}" \
+  APP_HOME="/opt/${APP}" \
+  FUNCTIONS="/opt/init.d/functions.d/"
 
-CMD ["/bin/bash", "/opt/app_name/initialize.sh"]
+COPY /root.d /
+
+ENTRYPOINT ["/bin/bash"]
+
+CMD ["/opt/init.d/initialize.sh"]
