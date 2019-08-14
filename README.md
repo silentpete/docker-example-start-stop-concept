@@ -1,24 +1,24 @@
 # Docker Container Configuration
 
-I have been working with docker for a little while and wanted to share a basic container layout. I have put this concept together from observing layouts, googling, and general aha moments while trying to get a container running smoothly.
+I have been working with docker for a little while and wanted to share a basic third party software container wrapper layout. I have put this concept together from observing layouts, googling, and general aha moments while trying to get a container running smoothly.
 
 ## Dockerfile layout
 
-Make sure that ENV FUNCTIONS is defined and call your init script.
+Make sure that ENV `FUNCTIONS` is defined and call your init script.
 
 ## COPY /root.d
 
-When files can be copied into the container, "root_d" can be used. "root_d" signifies the container OS root directory structure. Copy in the things you need with one command where they need to be. There comes a time when you may need to copy in a file before the RUN, and then copy in files after. For example a config file.
+When files can be copied into the container, "root.d" can be used. "root.d" signifies the container OS root directory structure. Copy in the things you need with one command where they need to be. There comes a time when you may need to copy in a file before the RUN, and then copy in files after. For example a config file.
 
 ## Initialize
 
-If the container is not in the state at which the service it will run needs to be, we need to put it into that state.
+If the container is not in the state the service running needs to be, we need to put it into that state.
 
->initialize = set to the value or put in the condition appropriate to the start of an operation.
+>initialize means to set conditions appropriate to the start of an operation.
 
 ## Start
 
-The start function is used to call all functions that get the highly configurable environment setup. Somewhere along the way the start will call the service the container is responsible for.
+The start function is used to call all functions that get the highly configurable environment setup. Somewhere along the way the start function will issue the third party service start command that the container is responsible for.
 
 ## Stop
 

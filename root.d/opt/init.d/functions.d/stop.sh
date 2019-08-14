@@ -1,8 +1,8 @@
 #!/bin/bash
 
-stop() {
-  info "received SIGTERM"
+function stop() {
+  info_msg "received SIGTERM"
   stop_app
-  info "Gracefull Shutdown"
+  info_msg "Graceful Shutdown"
   exit 0
 }

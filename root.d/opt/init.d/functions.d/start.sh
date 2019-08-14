@@ -1,6 +1,6 @@
 #!/bin/bash
 
-start() {
+function start() {
   confirm_environment
   config_app
   start_app

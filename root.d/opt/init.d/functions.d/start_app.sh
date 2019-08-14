@@ -11,8 +11,8 @@
 #
 ## build intelligent functions
 
-start_app() {
-  info "starting ${APP_NAME}"
+function start_app() {
+  info_msg "Starting ${APP_NAME}"
   # specific app start concept
   cd ${APP_HOME}
   ./start_service.sh

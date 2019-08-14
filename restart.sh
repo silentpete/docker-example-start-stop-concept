@@ -12,4 +12,4 @@ if [[ $(docker ps -a --format="{{.Names}}" | grep -c mystartmethod) -gt 0 ]]; th
   docker rm mystartmethod
 fi
 
-docker run -d -t --name=mystartmethod mystartmethod:latest
+docker run -dit --name=mystartmethod -e MSG_LEVEL=debug --log-driver=json-file mystartmethod:latest

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-config_app() {
-  info "configuring ${APP_NAME}"
+function config_app() {
+  info_msg "Configuring ${APP_NAME}"
 }
